@@ -1,0 +1,133 @@
+/* HeroesComponent's private CSS styles */
+.clusters {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+.mat_mallas{
+  max-width: 900px;
+  max-width: 900px;
+}
+.mat_list_results{
+  color: black;
+  background-color: white;
+  padding: 5px;
+  max-width: 200px;
+  
+}
+.mat_list_item_results{
+  color: white;
+  background-color: black;
+  //max-width: 900px;
+  border-radius: 8px;
+  margin: 5px;
+}
+.mat_list_item_line{
+  margin : 20px;
+  padding : 20px;
+  background-color: blue;
+  border-radius: 8px;
+  text-align: center;
+}
+.distancias {
+  color: white;
+  background-color: black;
+}
+.mat_grillas {
+  background-color: blue;
+  height: 400px;
+  width: 400px;
+  padding: 5px;
+}
+.mat_subheader{
+  color: black;
+  background-color: white;
+}
+mat-grid-tile {
+  background: lightblue;
+  border-radius: 8px;
+}
+mat-dialog-content{
+  background: white;
+}
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.clusters li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.clusters li:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+  left: .1em;
+}
+.clusters li.selected {
+  background-color: black;
+  color: white;
+}
+.clusters li.selected:hover {
+  background-color: #505050;
+  color: white;
+}
+.clusters li.selected:active {
+  background-color: black;
+  color: white;
+}
+.clusters .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color:#405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+input {
+  padding: .5rem;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-option-img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+[dir='rtl'] .example-option-img {
+  margin-right: 0;
+  margin-left: 8px;
+}

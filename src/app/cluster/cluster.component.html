@@ -1,0 +1,80 @@
+<mat-divider class="distancias"></mat-divider>
+<h4>Select the distance for measure the Clusters:</h4>
+<mat-form-field appearance="fill" class="distancias">
+  <mat-label>Distance</mat-label>
+  <mat-select [(value)]="selectedDistance">
+    <mat-option *ngFor="let distancia of distancias" [value]="distancia.value">
+      {{distancia.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br><br>
+<mat-divider class="distancias"></mat-divider>
+<h4>Select the grid to use:</h4>
+
+<div class="mat_mallas">
+  <mat-grid-list cols="2">
+    <mat-grid-tile>
+      <div class="mat_grillas">
+
+        <mat-grid-list cols="11" *ngFor="let item1 of items1; let i = index; first as isFirsti">
+
+          <mat-grid-tile *ngIf="!isFirsti">{{i}}</mat-grid-tile>
+
+          <div *ngIf="isFirsti">
+            <mat-grid-tile *ngFor="let etiqueta of etiquetas; let k = index; first as isFirstk">
+              <div *ngIf="!isFirstk">{{k}}</div>
+            </mat-grid-tile>
+          </div>
+
+          <div *ngIf="!isFirsti">
+            <mat-grid-tile *ngFor="let item2 of items2; let j = index; first as isFirstj">
+              <section class="example-section">
+                <mat-checkbox class="example-margin" [(ngModel)]="clusters[j][i-1]"></mat-checkbox>
+              </section>
+            </mat-grid-tile>
+          </div>
+
+        </mat-grid-list>
+
+      </div>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        
+      
+
+
+<mat-list role="list">
+  <h4>Unit Test:</h4>
+  <mat-list-item role="listitem"><button mat-raised-button (click)="getClusterScenario1()">Scenario d=1</button></mat-list-item>
+  <mat-list-item role="listitem"><button mat-raised-button (click)="getClusterScenario3()">Scenario d=3</button></mat-list-item>
+  <mat-list-item role="listitem"><button mat-raised-button (click)="getClusterScenario5()">Scenario d=5</button></mat-list-item>
+  <mat-list-item role="listitem"><button mat-raised-button (click)="setEmpty()">Clear Grid</button></mat-list-item>
+  <mat-list-item role="listitem"><button mat-raised-button (click)="setFill()">Fill Grid</button></mat-list-item>
+</mat-list>
+ 
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<br><br>
+<mat-divider class="distancias"></mat-divider>
+<h4>Calculate the clusters:</h4>
+
+<div class="example-button-row">
+  <button mat-raised-button (click)="getClusters()">GET CLUSTERS</button>
+</div>
+
+<mat-list *ngIf="checked" class="mat_list_results">
+  <div mat-subheader  class="mat_subheader">Clusters Results:</div>
+  <mat-list-item *ngFor="let grilla of cluster_result; let i = index;" class="mat_list_item_results">
+    <mat-icon mat-list-icon>grilla</mat-icon>
+    <div mat-line>Cluster {{i+1}}</div>
+    <div mat-line class="mat_list_item_line" *ngFor="let grilla_item of grilla;"> [{{grilla_item}}] </div>
+  </mat-list-item>
+</mat-list>
+
+
+<app-cluster-detail [grid]="selectedHero"></app-cluster-detail>
